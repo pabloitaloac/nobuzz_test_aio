@@ -1,0 +1,28 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./NOBUZZ-TEST-backend
+    ports:
+      - "8181:8181"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./nobuzz_test_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: nobuzztest
+      POSTGRES_PASSWORD: nobuzztest
+      POSTGRES_DB: nobuzztest
+    expose:
+      - "5432"
+    volumes:
+      - ./database/init.sql
