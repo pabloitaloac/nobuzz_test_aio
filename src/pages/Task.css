@@ -1,0 +1,16 @@
+.table{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.newTaskForm{
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    margin: 0px auto 0px auto;
+}
