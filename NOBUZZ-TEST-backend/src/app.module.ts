@@ -22,15 +22,16 @@ const secretKey = '1234567890';
     }),
 
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'nobuzztest',
-      password: 'nobuzztest',
-      database: 'nobuzztest',  
-      entities: [Task,User], 
-      synchronize: true, 
-    }),
+      "type": "postgres",
+      "host": "postgres",
+      "port": 5432,
+      "username": "nobuzztest",
+      "password": "nobuzztest",
+      "database": "nobuzztest",
+      "entities": ["dist/**/*.entity.js"],
+      "synchronize": true
+    }
+    ),
     
     TypeOrmModule.forFeature([Task,User])],
     
